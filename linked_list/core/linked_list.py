@@ -11,6 +11,9 @@ class LinkedList:
             ll.add(x)
         return ll
 
+    def from_range(range):
+        return LinkedList.from_list(list(range))
+
     def add(self, data):
         currentHead = self.head
 
@@ -21,6 +24,19 @@ class LinkedList:
         while currentHead.next != None:
             currentHead = currentHead.next
         currentHead.next = Node(data)
+
+        return currentHead.next
+    
+    def addNode(self, node):
+        currentHead = self.head
+
+        if not currentHead:
+            self.head = node
+            return self.head
+
+        while currentHead.next != None:
+            currentHead = currentHead.next
+        currentHead.next = node
 
         return currentHead.next
 
