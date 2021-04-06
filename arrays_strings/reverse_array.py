@@ -1,5 +1,3 @@
-print("Array reversal");
-
 def reverse(array):
     s = 0
     e = len(array) - 1
@@ -12,6 +10,3 @@ def reverse(array):
         s += 1
         e -= 1
     return array
-
-
-print(reverse([1, 2, 3, 4, 5, 6, 7]))

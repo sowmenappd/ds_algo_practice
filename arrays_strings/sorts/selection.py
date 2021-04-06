@@ -1,6 +1,3 @@
-print("Selection sort\n");
-
-# ascending
 def sort(array):
     l = len(array)
     for i in range(l-1):
@@ -16,5 +13,3 @@ def sort(array):
             array[minIdx], array[i] = array[i], array[minIdx]
     
     return array
-
-print(sort([4, 3, 2, 1, 5, 4, 7, 69, 12, 34, 65, 76]))

@@ -11,8 +11,4 @@ def sort(array, asc = True):
                 if array[i] < array[j]:
                     array[i], array[j] = array[j], array[i] #swap
     return array
-
-
-a = [ 6, 7, 34, 12, 1, 7 ]
-
-print(sort(a))
+    
