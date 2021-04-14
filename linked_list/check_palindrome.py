@@ -7,9 +7,7 @@ def is_palindrome(ll):
 def is_equal(ll, rll):
     if not ll and not rll:
         return True
-    if not ll:
-        return False
-    if not rll:
+    if not ll or not rll:
         return False
     
     return is_equal(ll.next, rll.next) and ll.data == rll.data
