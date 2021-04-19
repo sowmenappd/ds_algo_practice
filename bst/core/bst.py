@@ -50,16 +50,14 @@ class BinarySearchTree:
         this.__traverse__(target.right)
 
     def __traverse2__(this, target, level, levels):
-        if not target:
-            return levels
-
         if level not in levels:
             levels[level] = []
-        levels[level].append(target.value)
-
-        levels = this.__traverse2__(target.left, level + 1, levels)
-
-        levels = this.__traverse2__(target.right, level + 1, levels)
+        if target:
+            levels[level].append(target.value)
+            this.__traverse2__(target.left, level + 1, levels)
+            this.__traverse2__(target.right, level + 1, levels)
+        else:
+            levels[level].append(None)
 
         return levels
     
