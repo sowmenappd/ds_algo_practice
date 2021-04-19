@@ -35,7 +35,7 @@ class BinarySearchTree:
         current = this.root
         this.__traverse__(current)
 
-    def height(this):
+    def depth(this):
         return this.__height__(this.root)
 
     def tree(this):
@@ -65,7 +65,7 @@ class BinarySearchTree:
     
     def __height__(this, node):
         if not node:
-            return 0
+            return -1
 
         lHeight = this.__height__(node.left) + 1
         rHeight = this.__height__(node.right) + 1
