@@ -35,6 +35,11 @@ class BinarySearchTree:
         current = this.root
         this.__traverse__(current)
 
+    def height(this):
+        return this.__height__(this.root)
+
+    def tree(this):
+        return this.__traverse2__(this.root, 0, {})
 
     def __traverse__(this, target):
         if not target:
@@ -44,6 +49,27 @@ class BinarySearchTree:
         print(target.value)
         this.__traverse__(target.right)
 
+    def __traverse2__(this, target, level, levels):
+        if not target:
+            return levels
+
+        if level not in levels:
+            levels[level] = []
+        levels[level].append(target.value)
+
+        levels = this.__traverse2__(target.left, level + 1, levels)
+
+        levels = this.__traverse2__(target.right, level + 1, levels)
+
+        return levels
+    
+    def __height__(this, node):
+        if not node:
+            return 0
+
+        lHeight = this.__height__(node.left) + 1
+        rHeight = this.__height__(node.right) + 1
+        return max(lHeight, rHeight)
 
 
 class Node:
